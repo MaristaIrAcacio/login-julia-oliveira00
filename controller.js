@@ -19,7 +19,15 @@ function salvarUser(){
 
     if(nomeUser){
         dadosLista.push(nomeUser);
-        console.log(dadosLista);
+        // console.log(dadosLista);
     }
 
+}
+
+function criaListat(){
+    let tabela = document.getElementById("tabela").innerHTML = "<tr><th>Nome Usuário</th><th>Ações</th></tr>";
+    for(let i=0; i <= (dadosLista.length-1); i++){
+        tabela += "<tr><td>" + dadosLista[i] + "</td><td><button class='btn btn-sucess' onclick=''>Editar</button><button class='btn btn-danger' onclick=''>Excluir</button></td></tr>";
+        document.getElementById('tabela').innerHTML = tabela;
+    }
 }
