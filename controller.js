@@ -18,14 +18,17 @@ function salvarUser(){
 
     if(nomeUser){
         dadosLista.push(nomeUser);
-        criaListat();
-        document.getElementById(nomeUser).value = ''
+        criaLista();
+        document.getElementById("nomeUser").value = '';
         // console.log(dadosLista);
+    }else{
+        alert("Digite um nome!!!");
+        document.getElementById('nomeUser').focus();
     }
 
 }
 
-function criaListat(){
+function criaLista(){
     let tabela = document.getElementById("tabela").innerHTML = "<tr><th>Nome Usuário</th><th>Ações</th></tr>";
     for(let i=0; i <= (dadosLista.length-1); i++){
         tabela += "<tr><td>" + dadosLista[i] + "</td><td><button class='btn btn-sucess' onclick='editar(this.parentNode.parentNode.rowIndex)'>Editar</button><button class='btn btn-danger' onclick='excluir(this.parentNode.rowIndex)'>Excluir</button></td></tr>";
