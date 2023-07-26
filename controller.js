@@ -7,7 +7,6 @@ function acessar() {
         alert("favor preencha os campos para acessar o site");
     } else {
         window.location.href = "aula2.html";
-		console.log(window.location.href);
     }
 
 }
@@ -19,6 +18,8 @@ function salvarUser(){
 
     if(nomeUser){
         dadosLista.push(nomeUser);
+        criaListat();
+        document.getElementById(nomeUser).value = ''
         // console.log(dadosLista);
     }
 
